@@ -1,0 +1,28 @@
+$primary: #cf222e;
+
+.content {
+  margin: 2rem auto;
+  max-width: 50rem;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 3rem;
+  font-size: 5rem;
+}
+
+.btn {
+  display: block;
+  margin: 2rem auto;
+}
+
+.link {
+  display: block;
+  margin: 1rem;
+  color: $primary;
+}
+
+.img {
+  width: 35rem;
+  max-height: 100%;
+}
