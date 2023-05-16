@@ -4,23 +4,51 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gulp4_Demo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <title>Gulp4_Tailwind_Demo</title>
   <link rel="stylesheet" href="assets/style/all.css">
 </head>
 <body>
 
-  <div class="content">
+  <div class="mx-auto my-10 max-w-[50%] text-center">
     
-<h1 class="title">Gulp4_Demo</h1>
+<h1 class="mb-16 text-6xl">Gulp4_Tailwind_Demo</h1>
 
-<button class="btn">
-  顯示/隱藏連結
-</button>
+<h2 class="mb-5 text-3xl font-bold underline">
+  Tailwind Test
+</h2>
 
-<a href="#" class="link">連結</a>
+<button type="button" class="btn btn-primary mb-5" data-modal-toggle="defaultModal">開啟 Modal</button>
 
-<img src="assets/images/demo-img.jpg" class="img">
+<img src="assets/images/demo-img.jpg" class="mx-auto">
+
+<!-- Modal -->
+<div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <!-- Modal content -->
+    <div class="relative bg-white rounded-lg">
+      <!-- Modal header -->
+      <div class="flex items-start justify-between p-4 border-b rounded-t">
+        <h3 class="text-xl">
+          Modal
+        </h3>
+        <button type="button" class="ml-auto p-1 text-gray-400 " data-modal-hide="defaultModal">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="text-gray-500 p-6">
+        <p>Gulp4_Tailwind_Demo</p>
+      </div>
+      <!-- Modal footer -->
+      <div class="flex justify-center items-center p-3 border-t border-gray-200 rounded-b">
+        <button data-modal-hide="defaultModal" type="button" class=" btn btn-primary">關閉</button>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 
   <script src="assets/js/vendors.js"></script>
