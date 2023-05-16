@@ -12,8 +12,7 @@ let envOptions = {
       `${srcPath}/**/*`,
       `!${srcPath}/**/*.ejs`,
       `!${srcPath}/**/*.html`,
-      `!${srcPath}/assets/style/**/*.scss`,
-      `!${srcPath}/assets/style/**/*.sass`,
+      `!${srcPath}/assets/style/**/*.css`,
       `!${srcPath}/assets/js/**/*.js`,
     ],
     path: distPath,
@@ -29,8 +28,7 @@ let envOptions = {
   },
   style: {
     src: [
-      `${srcPath}/assets/style/**/*.scss`,
-      `${srcPath}/assets/style/**/*.sass`,
+      `${srcPath}/assets/style/**/*.css`,
     ],
     path: `${distPath}/assets/style`,
   },
@@ -43,7 +41,7 @@ let envOptions = {
   },
   vendors: {
     src: [
-      `${nodePath}/jquery/dist/jquery.js`,
+      `${nodePath}/flowbite/dist/flowbite.min.js`,
     ],
     concat: 'vendors.js',
     path: `${distPath}/assets/js`,

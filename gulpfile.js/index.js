@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 const minimist = require('minimist');
-const gulpSass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const { envOptions } = require('./envOptions');
 
@@ -31,10 +30,9 @@ function layoutHTML() {
     .pipe(browserSync.stream())
 }
 
-function sass() {
+function postcss() {
   return gulp.src(envOptions.style.src)
     .pipe($.sourcemaps.init())
-    .pipe(gulpSass().on('error', gulpSass.logError))
     .pipe($.postcss())
     .pipe($.if(options.env === 'production', $.cleanCss()))
     .pipe($.sourcemaps.write())
@@ -95,15 +93,15 @@ function deploy() {
 }
 
 function watch() {
-  gulp.watch(envOptions.html.src, layoutHTML);
-  gulp.watch(envOptions.html.ejsSrc, layoutHTML);
+  gulp.watch(envOptions.html.src, gulp.series(layoutHTML, postcss));
+  gulp.watch(envOptions.html.ejsSrc, gulp.series(layoutHTML, postcss));
   gulp.watch(envOptions.javascript.src, babel);
   gulp.watch(envOptions.javascript.src, copyFile);
-  gulp.watch(envOptions.style.src, sass);
+  gulp.watch(envOptions.style.src, postcss);
 }
 
 exports.deploy = deploy;
 exports.clean = clean;
 
-exports.build = gulp.series(clean, copyFile, layoutHTML, sass, babel, vendorJs, imageMin);
-exports.default = gulp.series(clean, copyFile, layoutHTML, sass, babel, vendorJs, imageMin, gulp.parallel(browser, watch));
+exports.build = gulp.series(clean, copyFile, layoutHTML, postcss, babel, vendorJs, imageMin);
+exports.default = gulp.series(clean, copyFile, layoutHTML, postcss, babel, vendorJs, imageMin, gulp.parallel(browser, watch));

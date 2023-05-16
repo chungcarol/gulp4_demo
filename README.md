@@ -4,6 +4,8 @@
 
 `Gulp 4.0.2`
 
+`Tailwind 3.3.2`
+
 ## 運行指令
 
 安裝套件
@@ -38,6 +40,7 @@ $ gulp deploy
 |--source # 輸出資料夾
 |--dist # 輸出資料夾
 |--postcss.config.js # postcss 設定
+|--tailwind.config.js # tailwind 設定
 ```
 
 ## 使用套件
@@ -61,7 +64,9 @@ $ gulp deploy
 * [gulp-postcss](https://github.com/postcss/gulp-postcss) - CSS 後處理器
 * [autoprefixer](https://github.com/postcss/autoprefixer) - CSS 加上前綴詞
 * [gulp-sass](https://www.npmjs.com/package/gulp-sass)、[sass](https://github.com/sass/dart-sass) - CSS 預處理器
-* [jquery](https://github.com/jquery/jquery) - 輕量級 JavaScript 函示庫
+* [tailwind](https://github.com/tailwindlabs/tailwindcss) - CSS 框架
+* [@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography) - Tailwind 官方自定義插件
+* [flowbite/plugin](https://github.com/themesberg/flowbite) - 利用 Tailwind 構建的 UI 套件
 
 ## 參考來源
 
